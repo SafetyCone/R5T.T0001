@@ -7,21 +7,21 @@ namespace R5T.T0001
     {
         #region Static
 
-        public static Message New(DateTime timestampUtc, MessageType messageType, string messageValue)
+        public static Message New(DateTime timestampUtc, MessageType messageType, string message)
         {
-            var message = new Message(timestampUtc, messageType, messageValue);
+            var output = new Message(timestampUtc, messageType, message);
+            return output;
+        }
+
+        public static Message NewError(DateTime timestampUtc, string errorMessage)
+        {
+            var message = new Message(timestampUtc, MessageType.Error, errorMessage);
             return message;
         }
 
-        public static Message NewError(DateTime timestampUtc, string messageValue)
+        public static Message NewOutput(DateTime timestampUtc, string outputMessage)
         {
-            var message = new Message(timestampUtc, MessageType.Error, messageValue);
-            return message;
-        }
-
-        public static Message NewOutput(DateTime timestampUtc, string messageValue)
-        {
-            var message = new Message(timestampUtc, MessageType.Output, messageValue);
+            var message = new Message(timestampUtc, MessageType.Output, outputMessage);
             return message;
         }
 
