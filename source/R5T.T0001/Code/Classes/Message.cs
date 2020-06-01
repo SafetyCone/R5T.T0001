@@ -36,7 +36,7 @@ namespace R5T.T0001
         public Message(DateTime timestampUtc, MessageType messageType, string value)
         {
             this.TimestampUtc = timestampUtc;
-            this.MessageType = MessageType;
+            this.MessageType = messageType;
             this.Value = value;
         }
     }
